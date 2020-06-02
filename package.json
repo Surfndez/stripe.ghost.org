@@ -1,6 +1,8 @@
 {
   "name": "stripe",
   "version": "0.1.0",
+  "repository": "git@github.com:TryGhost/stripe.git",
+  "author": "Ghost Foundation",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
