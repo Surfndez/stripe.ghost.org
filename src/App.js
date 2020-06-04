@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import {useState, useEffect} from 'react';
 import Switch, {Case} from './components/Switch';
+import {CopyToClipboard} from 'react-copy-to-clipboard';
 
 function LoadingState() {
     return (
@@ -29,12 +30,18 @@ function ErrorState(props) {
  * @param {string} props.token
  */
 function SuccessState(props) {
+    const [copied, setCopied] = useState(false);
+
     return (
         <div>
             <p> Copy this stuff! </p>
-            <p>
-                <code> {props.token} </code>
-            </p>
+            <p> {props.token} </p>
+            <CopyToClipboard text={props.token} onCopy={() => setCopied(true)}>
+                <button disabled={copied}>
+                    Click this to copy!
+                </button>
+            </CopyToClipboard>
+            <span> {copied ? 'copied!' : null} </span>
         </div>
     );
 }
