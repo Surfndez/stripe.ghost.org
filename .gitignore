@@ -69,3 +69,6 @@ typings/
 .DS_Store
 
 # Stripe Custom
+
+# Local Netlify folder
+.netlify
