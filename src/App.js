@@ -5,7 +5,7 @@ import Switch, {Case} from './components/Switch';
 
 function LoadingState() {
     return (
-        <span> Loading... </span>
+        <p> Loading... </p>
     );
 }
 
@@ -16,8 +16,10 @@ function LoadingState() {
 function ErrorState(props) {
     return (
         <div>
-            <span> There was an error </span>
-            <span> {props.errorMessage} </span>
+            <p> There was an error </p>
+            <p>
+                <code> {props.errorMessage} </code>
+            </p>
         </div>
     );
 }
@@ -29,8 +31,10 @@ function ErrorState(props) {
 function SuccessState(props) {
     return (
         <div>
-            <span> Copy this stuff! </span>
-            <code> {props.token} </code>
+            <p> Copy this stuff! </p>
+            <p>
+                <code> {props.token} </code>
+            </p>
         </div>
     );
 }
