@@ -6,40 +6,21 @@ import SuccessState from './components/SuccessState';
 import ErrorState from './components/ErrorState';
 import LoadingState from './components/LoadingState';
 
-async function getData() {
-    const res = await fetch(`/.netlify/functions/get-stripe-connect-integration-token${window.location.search}`, {
-        method: 'POST'
-    });
-
-    const text = await res.text();
-
-    if (!res.ok) {
-        throw new Error(text);
-    }
-
-    return text;
-}
-
-function App() {
+/**
+ * @param {object} props
+ * @param {() => Promise<string>} props.getData
+ */
+function App(props) {
+    const {getData} = props;
     const [state, setState] = useState({status: 'init', data: ''});
-
-    /**
-     * @param {string} token
-     */
-    function handleSuccess(token) {
-        setState({status: 'success', data: token});
-    }
-    /**
-     * @param {Error} error
-     */
-    function handleError(error) {
-        setState({status: 'error', data: error.message});
-    }
 
     useEffect(() => {
         setState({status: 'loading', data: ''});
-        getData().then(handleSuccess, handleError);
-    }, []);
+        getData().then(
+            token => setState({status: 'success', data: token}),
+            error => setState({status: 'error', data: error.message})
+        );
+    }, [getData]);
 
     return (
         <div className="App">
