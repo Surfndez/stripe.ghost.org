@@ -1,5 +1,8 @@
 # Node template
 
+# React build
+build
+
 # Logs
 logs
 *.log
