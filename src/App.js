@@ -2,49 +2,9 @@ import React from 'react';
 import './App.css';
 import {useState, useEffect} from 'react';
 import Switch, {Case} from './components/Switch';
-import {CopyToClipboard} from 'react-copy-to-clipboard';
-
-function LoadingState() {
-    return (
-        <p> Loading... </p>
-    );
-}
-
-/**
- * @param {object} props
- * @param {string} props.errorMessage
- */
-function ErrorState(props) {
-    return (
-        <div>
-            <p> There was an error </p>
-            <p>
-                <code> {props.errorMessage} </code>
-            </p>
-        </div>
-    );
-}
-
-/**
- * @param {object} props
- * @param {string} props.token
- */
-function SuccessState(props) {
-    const [copied, setCopied] = useState(false);
-
-    return (
-        <div>
-            <p> Copy this stuff! </p>
-            <p> {props.token} </p>
-            <CopyToClipboard text={props.token} onCopy={() => setCopied(true)}>
-                <button disabled={copied}>
-                    Click this to copy!
-                </button>
-            </CopyToClipboard>
-            <span> {copied ? 'copied!' : null} </span>
-        </div>
-    );
-}
+import SuccessState from './components/SuccessState';
+import ErrorState from './components/ErrorState';
+import LoadingState from './components/LoadingState';
 
 async function getData() {
     const res = await fetch(`/.netlify/functions/get-stripe-connect-integration-token${window.location.search}`, {
