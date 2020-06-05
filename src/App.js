@@ -23,12 +23,22 @@ async function getData() {
 function App() {
     const [state, setState] = useState({status: 'init', data: null});
 
-    const setSuccess = data => setState({status: 'success', data});
-    const setError = error => setState({status: 'error', data: error.message});
+    /**
+     * @param {string} token
+     */
+    function handleSuccess(token) {
+        setState({status: 'success', data: token});
+    }
+    /**
+     * @param {Error} error
+     */
+    function handleError(error) {
+        setState({status: 'success', data: error.message});
+    }
 
     useEffect(() => {
         setState({status: 'loading', data: null});
-        getData().then(setSuccess, setError);
+        getData().then(handleSuccess, handleError);
     }, []);
 
     return (

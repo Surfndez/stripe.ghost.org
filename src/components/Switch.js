@@ -3,11 +3,11 @@ import React from 'react';
 /**
  * @param {object} props
  * @param {any} props.on
- * @param {React.Children} props.children
+ * @param {React.ReactNode} props.children
  */
-export default function Switch(props) {
+function Switch(props) {
     /**
-     * @param {React.Element} child
+     * @param {React.ReactElement} child
      */
     function matchChild(child) {
         if (!React.isValidElement(child)) {
@@ -29,12 +29,15 @@ export default function Switch(props) {
 /**
  * @param {object} props
  * @param {any} props.when
- * @param {React.Children} props.children
+ * @param {React.ReactNode} props.children
  */
-export function Case(props) {
+function Case(props) {
     return (
         <>
             {props.children}
         </>
     );
 }
+
+export default Switch;
+export {Switch, Case};
