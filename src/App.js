@@ -21,7 +21,7 @@ async function getData() {
 }
 
 function App() {
-    const [state, setState] = useState({status: 'init', data: null});
+    const [state, setState] = useState({status: 'init', data: ''});
 
     /**
      * @param {string} token
@@ -37,7 +37,7 @@ function App() {
     }
 
     useEffect(() => {
-        setState({status: 'loading', data: null});
+        setState({status: 'loading', data: ''});
         getData().then(handleSuccess, handleError);
     }, []);
 
