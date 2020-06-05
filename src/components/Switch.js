@@ -3,7 +3,7 @@ import React from 'react';
 /**
  * @param {object} props
  * @param {any} props.on
- * @param {React.ReactNode} props.children
+ * @param {React.ReactElement | React.ReactElement[]} props.children
  */
 function Switch(props) {
     /**
@@ -29,7 +29,7 @@ function Switch(props) {
 /**
  * @param {object} props
  * @param {any} props.when
- * @param {React.ReactNode} props.children
+ * @param {React.ReactElement | React.ReactElement[]} props.children
  */
 function Case(props) {
     return (
