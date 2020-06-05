@@ -2,6 +2,7 @@
 
 # React build
 build
+react-app-env.d.ts
 
 # Logs
 logs
