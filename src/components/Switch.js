@@ -10,10 +10,11 @@ export default function Switch(props) {
      * @param {React.Element} child
      */
     function matchChild(child) {
-        if (React.isValidElement(child)) {
-            if (child.props.when === props.on) {
-                return React.cloneElement(child);
-            }
+        if (!React.isValidElement(child)) {
+            return child;
+        }
+        if (!Reflect.has(child.props, 'when') || child.props.when === props.on) {
+            return React.cloneElement(child);
         }
         return null;
     }
