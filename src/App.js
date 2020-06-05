@@ -33,7 +33,7 @@ function App() {
      * @param {Error} error
      */
     function handleError(error) {
-        setState({status: 'success', data: error.message});
+        setState({status: 'error', data: error.message});
     }
 
     useEffect(() => {
