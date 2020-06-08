@@ -23,14 +23,19 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 - http://localhost:8888?state=TESTING&code=SUCCESS
     - Fakes a successful redirect.
+    - This will be the majority of all requests
 - http://localhost:8888?state=TESTING&code=EXPIRED
     - Fakes a redirect where the params have already been used.
+    - This would happen if the user was refreshing the page, we should tell them to go through the process again.
 - http://localhost:8888?state=TESTING&code=INVALID
     - Fakes a redirect where the params are incorrect.
+    - This would only happen if people were manually trying to enter the URL rather than going through the flow
 - http://localhost:8888?state=TESTING&code=CONNECT
     - Fakes a redirect where we have trouble connecting to Stripe.
+    - This has only happened once in local testing, we should tell them to retry/go through the process again
 - http://localhost:8888?state=TESTING&code=WHATEVA
     - Fakes a redirect where we have an unknown error.
+    - This is for unknown errors, similar to above, this happens rarely and should just be retried
 - http://localhost:8888?state=TESTING&error=access_denied&error_description=The+user+denied+your+request
     - Fakes a redirect where the user clicks "Cancel" instead of connecting the account.
 
