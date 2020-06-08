@@ -40,7 +40,7 @@ This will use the published app, and so will need a push to master to test your 
 ## Develop
 
 - `yarn` to install all dependencies
-- `netlify link` to link this to the netlify project (You can select the match by the git remote)
+- `netlify link` to link this to the netlify project (Choose "Use current git remote origin (https://github.com/TryGhost/stripe)")
 
 ## Run
 
