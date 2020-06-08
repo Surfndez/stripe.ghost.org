@@ -2,6 +2,38 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+
+## Running and testing locally
+
+### Prerequistites
+
+- `netlify` CLI (Should be installed with `gstenv`)
+
+
+### Setup
+
+- `yarn` to install all dependencies
+- `netlify link` to link this to the netlify project (You can select the match by the git remote)
+
+### Running
+
+- `yarn dev` This will spin up a local development server, it should be access via http://localhost:8888
+
+### Testing
+
+- http://localhost:8888?state=TESTING&code=SUCCESS
+    - Fakes a successful redirect.
+- http://localhost:8888?state=TESTING&code=EXPIRED
+    - Fakes a redirect where the params have already been used.
+- http://localhost:8888?state=TESTING&code=INVALID
+    - Fakes a redirect where the params are incorrect.
+- http://localhost:8888?state=TESTING&code=CONNECT
+    - Fakes a redirect where we have trouble connecting to Stripe.
+- http://localhost:8888?state=TESTING&code=WHATEVA
+    - Fakes a redirect where we have an unknown error.
+- http://localhost:8888?state=TESTING&error=access_denied&error_description=The+user+denied+your+request
+    - Fakes a redirect where the user clicks "Cancel" instead of connecting the account.
+
 ## Available Scripts
 
 In the project directory, you can run:
