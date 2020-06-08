@@ -24,12 +24,15 @@ Run the application locally and visit the following URL's to test different stat
 - http://localhost:8888?state=TESTING&error=access_denied&error_description=The+user+denied+your+request
     - Fakes a redirect where the user clicks "Cancel" instead of connecting the account.
 
-### Running the full flow
+### Running the end-to-end flow with Ghost Admin
 
-This will use the published app, and so will need a push to master to test your changes.
+This will use your local Ghost Admin, but the live stripe.ghost.org and so you will need a push to master to test your changes.
 
+Pre-requisites:
+- You'll need to create/update config.local.json to set `"stripeDirect": false` to be able to see the new UI
 - You'll need Ghost & Ghost-Admin on master and built
-- You'll need to update config.local.json to set `"stripeDirect": false`
+
+Test the flow:
 - Visit the labs settings in the Ghost-Admin
 - Click the "Connect to Stripe" button in the member settings
 - Accept the connection on the Stripe site
