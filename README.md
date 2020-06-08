@@ -39,6 +39,19 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - http://localhost:8888?state=TESTING&error=access_denied&error_description=The+user+denied+your+request
     - Fakes a redirect where the user clicks "Cancel" instead of connecting the account.
 
+## Running the full flow
+
+- You'll need Ghost & Ghost-Admin on master and built
+- You'll need to update config.local.json to set `"stripeDirect": false`
+- Visit the labs settings in the Ghost-Admin
+- Click the "Connect to Stripe" button in the member settings
+- Accept the connection on the Stripe site
+- Copy the token from `stripe.ghost.org`
+- Paste the token into the input in the Ghost-Admin, below the button you clicked
+- Save the settings
+
+Pushes to master of this repo will deploy this app, so you can see the latest changes in the full flow.
+
 ## Available Scripts
 
 In the project directory, you can run:
