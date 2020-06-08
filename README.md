@@ -1,6 +1,8 @@
 # Stripe
 
-This is a small frontend app which acts as a bridge between individual Ghost instances and the Ghost Foundation's Stripe Connect OAuth flow.
+This is a small React frontend app which acts as a bridge between individual Ghost instances and the Ghost Foundation's Stripe Connect OAuth flow.
+
+It makes use of Netlify functions to securely fetch tokens from Stripe and present them to the user.
 
 ## Usage
 
