@@ -4,7 +4,7 @@ This is a small frontend app which acts as a bridge between individual Ghost ins
 
 ## Usage
 
-Run
+Run the application locally and visit the following URL's to test different states.
 
 - http://localhost:8888?state=TESTING&code=SUCCESS
     - Fakes a successful redirect.
