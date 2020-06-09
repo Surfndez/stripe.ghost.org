@@ -62,6 +62,18 @@ async function handler(event) {
             code: event.queryStringParameters.code
         });
 
+        if (tokenResponse.livemode === undefined) {
+            throw new Error('No livemode received');
+        }
+
+        if (tokenResponse.access_token === undefined) {
+            throw new Error('No access_token received');
+        }
+
+        if (tokenResponse.stripe_publishable_key === undefined) {
+            throw new Error('No stripe_publishable_key received');
+        }
+
         const token = encodeStripeTokenData(tokenResponse, event.queryStringParameters.state);
 
         return {
@@ -102,17 +114,6 @@ function getStripe() {
  * @returns {string}
  */
 function encodeStripeTokenData(tokenResponse, s) {
-    if (!Reflect.has(tokenResponse, 'livemode')) {
-        throw new Error('No livemode received');
-    }
-
-    if (!Reflect.has(tokenResponse, 'access_token')) {
-        throw new Error('No access_token received');
-    }
-
-    if (!Reflect.has(tokenResponse, 'stripe_publishable_key')) {
-        throw new Error('No stripe_publishable_key received');
-    }
 
     const {livemode: l, access_token: a, stripe_publishable_key: p} = tokenResponse;
 
