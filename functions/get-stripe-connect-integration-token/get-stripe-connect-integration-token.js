@@ -74,7 +74,13 @@ async function handler(event) {
             throw new Error('No stripe_publishable_key received');
         }
 
-        const token = encodeStripeTokenData(tokenResponse, event.queryStringParameters.state);
+        if (tokenResponse.stripe_user_id === undefined) {
+            throw new Error('No stripe_user_id received');
+        }
+
+        const accountDetails = await stripe.accounts.retrieve(tokenResponse.stripe_user_id);
+
+        const token = encodeStripeTokenData(tokenResponse, accountDetails, event.queryStringParameters.state);
 
         return {
             statusCode: 200,
@@ -109,15 +115,17 @@ function getStripe() {
 
 /**
  * @param {import('stripe').default.OAuthToken} tokenResponse
+ * @param {import('stripe').default.Account} accountDetails
  * @param {string} s - The state query param from the request
  *
  * @returns {string}
  */
-function encodeStripeTokenData(tokenResponse, s) {
+function encodeStripeTokenData(tokenResponse, accountDetails, s) {
+    const {livemode: l, access_token: a, stripe_publishable_key: p, stripe_user_id: i} = tokenResponse;
 
-    const {livemode: l, access_token: a, stripe_publishable_key: p} = tokenResponse;
+    const n = accountDetails.settings && accountDetails.settings.dashboard.display_name;
 
-    return Buffer.from(JSON.stringify({l, a, p, s})).toString('base64');
+    return Buffer.from(JSON.stringify({l, a, p, s, n, i})).toString('base64');
 }
 
 /**
