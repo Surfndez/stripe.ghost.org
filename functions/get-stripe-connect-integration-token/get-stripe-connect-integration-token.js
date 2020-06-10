@@ -56,7 +56,8 @@ async function handler(event) {
     }
 
     try {
-        const stripe = getStripe();
+        const mode = JSON.parse(Buffer.from(event.queryStringParameters.state, 'base64').toString()).mode;
+        const stripe = getStripe(mode);
         const tokenResponse = await stripe.oauth.token({
             grant_type: 'authorization_code',
             code: event.queryStringParameters.code
@@ -95,12 +96,14 @@ async function handler(event) {
 }
 
 /**
+ * @param {'live' | 'test'} mode
+ *
  * @returns {import('stripe').default}
  */
-function getStripe() {
+function getStripe(mode) {
     const {Stripe} = require('stripe').default;
 
-    const CLIENT_SECRET = process.env.CLIENT_SECRET;
+    const CLIENT_SECRET = mode === 'live' ? process.env.CLIENT_SECRET : process.env.TEST_CLIENT_SECRET;
 
     if (!CLIENT_SECRET) {
         throw new Error('Incorrectly configured, missing CLIENT_SECRET');
