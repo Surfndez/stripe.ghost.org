@@ -14,7 +14,7 @@ function SuccessState(props) {
     return (
         <section className="gh-container gh-content">
             <div className="gh-header">
-                <div className="gh-status"><Checkmark /></div>
+                <div className="gh-status success"><Checkmark /></div>
                 <div className="gh-logo"><GhostStripe /></div>
             </div>
             <div className="gh-box">
@@ -23,7 +23,7 @@ function SuccessState(props) {
                 <code>{props.token}</code>
                 <CopyToClipboard text={props.token} onCopy={() => setCopied(true)}>
                     <button className="gh-button gh-button-primary" disabled={copied}>
-                        {copied ? 'Copied' : 'Click this to copy!'}
+                        {copied ? 'Copied' : 'Copy secure key'}
                     </button>
                 </CopyToClipboard>
             </div>
