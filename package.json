@@ -23,7 +23,13 @@
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": [
+      "react-app",
+      "plugin:ghost/browser"
+    ],
+    "plugins": [
+      "ghost"
+    ]
   },
   "browserslist": {
     "production": [
@@ -40,7 +46,7 @@
   "devDependencies": {
     "@types/jest": "^25.2.3",
     "@types/react-copy-to-clipboard": "^4.3.0",
-    "eslint-plugin-ghost": "^1.5.0",
+    "eslint-plugin-ghost": "1.5.0",
     "typescript": "^3.9.5"
   }
 }
