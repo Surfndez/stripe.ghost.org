@@ -12,7 +12,7 @@ function SuccessState(props) {
     const [copied, setCopied] = useState(false);
 
     return (
-        <section className="gh-canvas centered">
+        <section className="gh-container centered">
             <div className="gh-canvas-header">
                 <div><Checkmark /></div>
                 <div><GhostStripe /></div>

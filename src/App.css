@@ -1,61 +1,42 @@
 @import "./styles/screen.css";
 
-/* Main viewport, contains main content, and alerts */
-/* Use `position: fixed`, covering full window area so scrolling on mobile doesn't trigger elastic scroll */
-.gh-app {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    height: 100%;
-}
-
 /* Content viewport, contains everything else */
 .gh-viewport {
-    flex-grow: 1;
     display: flex;
-    overflow: hidden;
-    max-height: 100%;
+    flex-direction: column;
+    min-height: 100vh;
+    background: #F2F4F7;
 }
 
 .gh-main {
-    position: relative;
-    flex-grow: 1;
+    flex: 1 0 auto;
     display: flex;
     flex-direction: column;
-    background: #F2F4F7;
-    overflow-y: auto;
-    /* prevent horizontal scroll in IE11 */
-    overflow-x: hidden;
-    --webkit-overflow-scrolling: touch;
 }
 
-.gh-main > section {
-    width: 100%;
-    position: relative;
-}
-
-.gh-canvas {
+.gh-page {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     flex-grow: 1;
-    padding: 24px 48px;
+}
+
+.gh-container {
+    display: flex;
+    width: 100%;
     margin: 0 auto;
     max-width: 1220px;
 }
 
-.gh-canvas.centered {
-    display: flex;
+.gh-container.centered {
+    flex-grow: 1;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.gh-canvas.spread {
-    display: flex;
-    width: 100%;
+.gh-container.spread {
     justify-content: space-between;
     align-items: flex-end;
 }

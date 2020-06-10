@@ -24,9 +24,9 @@ function App(props) {
     }, [getData]);
 
     return (
-        <div className="gh-app">
-            <div className="gh-viewport">
-                <main className="gh-main">
+        <div className="gh-viewport">
+            <main className="gh-main">
+                <div className="gh-page">
                     <Switch on={state.status}>
                         <Case when="loading">
                             <LoadingState />
@@ -38,12 +38,12 @@ function App(props) {
                             <SuccessState token={state.data} />
                         </Case>
                     </Switch>
-                    <div className="gh-canvas spread">
+                    <div className="gh-container spread">
                         <span><StripeLogo /></span>
                         <button className="gh-button gh-button-white">Get support</button>
                     </div>
-                </main>
-            </div>
+                </div>
+            </main>
         </div>
     );
 }
