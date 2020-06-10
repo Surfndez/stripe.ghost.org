@@ -38,8 +38,8 @@ function App(props) {
                             <SuccessState token={state.data} />
                         </Case>
                     </Switch>
-                    <div className="gh-container spread">
-                        <span><StripeLogo /></span>
+                    <div className="gh-container gh-footer">
+                        <StripeLogo />
                         <button className="gh-button gh-button-white">Get support</button>
                     </div>
                 </div>

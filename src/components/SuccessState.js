@@ -12,10 +12,10 @@ function SuccessState(props) {
     const [copied, setCopied] = useState(false);
 
     return (
-        <section className="gh-container centered">
-            <div className="gh-canvas-header">
-                <div><Checkmark /></div>
-                <div><GhostStripe /></div>
+        <section className="gh-container gh-content">
+            <div className="gh-header">
+                <div className="gh-status"><Checkmark /></div>
+                <div className="gh-logo"><GhostStripe /></div>
             </div>
             <div className="gh-box">
                 <h2>Secure key successfully generated!</h2>

@@ -5,6 +5,7 @@
 
     /* Colours */
     --color-primary: #3EB0EF;
+    --color-primary-darker: #139de7;
     --color-base: #15212A;
     --color-border: #E5EFF5;
     --color-bg: #F2F4F7;
@@ -17,7 +18,7 @@
     --font-mono: Consolas, "Liberation Mono", Menlo, Courier, monospace;
     --font-light: 100;
     --font-normal: 400;
-    --font-bold: 700;
+    --font-bold: 600;
     --font-heavy: 800;
 
     /* Breakpoints */
@@ -30,7 +31,7 @@
     /* Sizes */
     --height: 4rem;
     --margin: 2rem;
-    --radius: 0.5rem;
+    --radius: 0.4rem;
 
 }
 

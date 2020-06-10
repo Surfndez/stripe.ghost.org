@@ -29,19 +29,26 @@
     max-width: 1220px;
 }
 
-.gh-container.centered {
+.gh-container.gh-content {
     flex-grow: 1;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.gh-container.spread {
+.gh-container.gh-footer {
     justify-content: space-between;
     align-items: flex-end;
+    max-height: 3.3rem;
+    height: 100%;
 }
 
-.gh-canvas-header {
+.gh-footer svg {
+    height: 3.3rem;
+    width: auto;
+}
+
+.gh-header {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -74,12 +81,13 @@
 
 .gh-box > code {
     font-family: var(--font-mono);
+    user-select: none;
     word-wrap: anywhere;
     padding: 13px 14px 6px;
     background: #F8FAFC;
     border: 1px solid #E5EFF5;
     border-radius: 5px;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     line-height: 1.5em;
     letter-spacing: 0.025em;
     color: #9BAEB8;
