@@ -1,6 +1,8 @@
 import React from 'react';
 import CopyToClipboard from 'react-copy-to-clipboard';
 import {useState} from 'react';
+import {ReactComponent as Checkmark} from '../assets/check.svg';
+import {ReactComponent as GhostStripe} from '../assets/ghost_stripe.svg';
 
 /**
  * @param {object} props
@@ -12,11 +14,8 @@ function SuccessState(props) {
     return (
         <section className="gh-canvas centered">
             <div className="gh-canvas-header">
-                <div>Header icon - Success</div>
-                <div>
-                    <div>Ghost</div>
-                    <div>Stripe</div>
-                </div>
+                <div><Checkmark /></div>
+                <div><GhostStripe /></div>
             </div>
             <div className="gh-box">
                 <h2>Secure key successfully generated!</h2>
@@ -24,10 +23,9 @@ function SuccessState(props) {
                 <code>{props.token}</code>
                 <CopyToClipboard text={props.token} onCopy={() => setCopied(true)}>
                     <button className="gh-button gh-button-primary" disabled={copied}>
-                        Click this to copy!
+                        {copied ? 'Copied' : 'Click this to copy!'}
                     </button>
                 </CopyToClipboard>
-                <span> {copied ? 'copied!' : null} </span>
             </div>
         </section>
     );

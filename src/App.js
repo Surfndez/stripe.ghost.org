@@ -5,6 +5,7 @@ import Switch, {Case} from './components/Switch';
 import SuccessState from './components/SuccessState';
 import ErrorState from './components/ErrorState';
 import LoadingState from './components/LoadingState';
+import {ReactComponent as StripeLogo} from './assets/stripe_verified.svg';
 
 /**
  * @param {object} props
@@ -38,7 +39,7 @@ function App(props) {
                         </Case>
                     </Switch>
                     <div className="gh-canvas spread">
-                        <span>Stripe Icon</span>
+                        <span><StripeLogo /></span>
                         <button className="gh-button gh-button-white">Get support</button>
                     </div>
                 </main>
