@@ -23,20 +23,26 @@ function App(props) {
     }, [getData]);
 
     return (
-        <div className="App">
-            <main className="App-main">
-                <Switch on={state.status}>
-                    <Case when="loading">
-                        <LoadingState />
-                    </Case>
-                    <Case when="error">
-                        <ErrorState errorMessage={state.data} />
-                    </Case>
-                    <Case when="success">
-                        <SuccessState token={state.data} />
-                    </Case>
-                </Switch>
-            </main>
+        <div className="gh-app">
+            <div className="gh-viewport">
+                <main className="gh-main">
+                    <Switch on={state.status}>
+                        <Case when="loading">
+                            <LoadingState />
+                        </Case>
+                        <Case when="error">
+                            <ErrorState errorMessage={state.data} />
+                        </Case>
+                        <Case when="success">
+                            <SuccessState token={state.data} />
+                        </Case>
+                    </Switch>
+                    <div className="gh-canvas spread">
+                        <span>Stripe Icon</span>
+                        <button className="gh-button gh-button-white">Get support</button>
+                    </div>
+                </main>
+            </div>
         </div>
     );
 }

@@ -1,20 +1,105 @@
-.App {
-  text-align: center;
+@import "./styles/screen.css";
+
+/* Main viewport, contains main content, and alerts */
+/* Use `position: fixed`, covering full window area so scrolling on mobile doesn't trigger elastic scroll */
+.gh-app {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    height: 100%;
 }
 
-.App-main {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* Content viewport, contains everything else */
+.gh-viewport {
+    flex-grow: 1;
+    display: flex;
+    overflow: hidden;
+    max-height: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+.gh-main {
+    position: relative;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    background: #F2F4F7;
+    overflow-y: auto;
+    /* prevent horizontal scroll in IE11 */
+    overflow-x: hidden;
+    --webkit-overflow-scrolling: touch;
+}
+
+.gh-main > section {
+    width: 100%;
+    position: relative;
+}
+
+.gh-canvas {
+    flex-grow: 1;
+    padding: 0 24px 48px;
+    margin: 0 auto;
+    max-width: 1220px;
+}
+
+.gh-canvas.centered {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.gh-canvas.spread {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.gh-canvas-header {
+    display: flex;
+    flex-direction: column;
+}
+
+.gh-box {
+    max-width: 420px;
+    width: 100%;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.03), 0px 1px 6px rgba(0, 0, 0, 0.03);
+    border-radius: 8px;
+}
+
+.gh-box > h2 {
+    font-weight: 600;
+    font-size: 1.9rem;
+    line-height: 1.2em;
+    letter-spacing: 0.015em;
+}
+
+.gh-box > p {
+    font-size: 1.4rem;
+    line-height: 1.5em;
+    letter-spacing: 0.025em;
+    color: #738A94;
+}
+
+.gh-box > code {
+    font-family: var(--font-mono);
+    word-wrap: anywhere;
+    padding: 13px 14px 6px;
+    background: #F8FAFC;
+    border: 1px solid #E5EFF5;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    line-height: 1.5em;
+    letter-spacing: 0.025em;
+    color: #9BAEB8;
 }
 
 @keyframes App-logo-spin {

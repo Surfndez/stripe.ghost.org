@@ -10,16 +10,26 @@ function SuccessState(props) {
     const [copied, setCopied] = useState(false);
 
     return (
-        <div>
-            <p> Copy this stuff! </p>
-            <p> {props.token} </p>
-            <CopyToClipboard text={props.token} onCopy={() => setCopied(true)}>
-                <button disabled={copied}>
-                    Click this to copy!
-                </button>
-            </CopyToClipboard>
-            <span> {copied ? 'copied!' : null} </span>
-        </div>
+        <section className="gh-canvas centered">
+            <div className="gh-canvas-header">
+                <div>Header icon - Success</div>
+                <div>
+                    <div>Ghost</div>
+                    <div>Stripe</div>
+                </div>
+            </div>
+            <div className="gh-box">
+                <h2>Secure key successfully generated!</h2>
+                <p>Paste this key into Ghost Admin to complete the connection to Stripe. This is a secret key, so you should never give it to anyone else!</p>
+                <code>{props.token}</code>
+                <CopyToClipboard text={props.token} onCopy={() => setCopied(true)}>
+                    <button className="gh-button gh-button-primary" disabled={copied}>
+                        Click this to copy!
+                    </button>
+                </CopyToClipboard>
+                <span> {copied ? 'copied!' : null} </span>
+            </div>
+        </section>
     );
 }
 
