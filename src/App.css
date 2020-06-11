@@ -114,6 +114,11 @@
     width: auto;
 }
 
+.gh-footer .gh-button.gh-button-white {
+    height: 3.3rem;
+    line-height: 3.3rem;
+}
+
 /* Loading state */
 .gh-loading-content {
     display: flex;

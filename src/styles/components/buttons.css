@@ -3,6 +3,7 @@
 
 .gh-button {
     display: inline-block;
+    outline: none;
     min-width: 75px;
     height: var(--height);
     padding: 0 2rem;
@@ -14,10 +15,12 @@
     font-weight: 500;
     line-height: var(--height);
     text-align: center;
-    text-decoration: none;
+    text-decoration: none !important;
     white-space: nowrap;
     appearance: none;
-    transition: 0.4s ease;
+    transition: all 0.2s ease;
+    transition-property: color, border-color, background, width, height, box-shadow;
+    -webkit-font-smoothing: subpixel-antialiased;
 }
 
 .gh-button.gh-button-fit {
@@ -69,13 +72,10 @@
 }
 
 .gh-button.gh-button-white {
-    height: 3.3rem;
-    line-height: 1.2em;
     background: #fff;
     box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
     color: #627881 !important;
     border: none;
-    outline: none;
 }
 
 .gh-button.gh-button-white:hover {
