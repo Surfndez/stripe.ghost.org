@@ -22,15 +22,6 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "plugin:ghost/browser"
-    ],
-    "plugins": [
-      "ghost"
-    ]
-  },
   "browserslist": {
     "production": [
       ">0.2%",
