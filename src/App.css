@@ -23,21 +23,18 @@
 }
 
 .gh-container {
-    display: flex;
     width: 100%;
     margin: 0 auto;
     max-width: 1220px;
 }
 
-.gh-container.gh-content {
+.gh-content {
+    display: flex;
     flex-grow: 1;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-.gh-content {
-    margin-bottom: 4vmin;
+    margin-bottom: 12vmin;
 }
 
 .gh-header {
@@ -56,6 +53,7 @@
 .gh-logo {
     max-height: 37px;
     width: auto;
+    margin-right: 24px;
 }
 
 .gh-box {
@@ -91,7 +89,7 @@
     font-family: var(--font-mono);
     user-select: none;
     word-wrap: anywhere;
-    padding: 13px 14px 6px;
+    padding: 10px;
     background: #F8FAFC;
     border: 1px solid #E5EFF5;
     border-radius: 5px;
@@ -102,11 +100,14 @@
     margin-bottom: 20px;
 }
 
-.gh-container.gh-footer {
+.gh-footer {
+    display: flex;
     justify-content: space-between;
     align-items: flex-end;
     max-height: 3.3rem;
     height: 100%;
+    width: 100%;
+    margin: 0 auto;
 }
 
 .gh-footer svg {

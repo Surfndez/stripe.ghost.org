@@ -6,6 +6,8 @@ import SuccessState from './components/SuccessState';
 import ErrorState from './components/ErrorState';
 import LoadingState from './components/LoadingState';
 import {ReactComponent as StripeLogo} from './assets/stripe_verified.svg';
+import {ReactComponent as Checkmark} from './assets/check.svg';
+import {ReactComponent as GhostStripe} from './assets/ghost_stripe.svg';
 
 /**
  * @param {object} props
@@ -27,21 +29,36 @@ function App(props) {
         <div className="gh-viewport">
             <main className="gh-main">
                 <div className="gh-page">
-                    <Switch on={state.status}>
-                        <Case when="loading">
-                            <LoadingState />
-                        </Case>
-                        <Case when="error">
-                            <ErrorState errorMessage={state.data} />
-                        </Case>
-                        <Case when="success">
-                            <SuccessState token={state.data} />
-                        </Case>
-                    </Switch>
-                    <div className="gh-container gh-footer">
+                    <section className="gh-container gh-content">
+
+                        <div className="gh-header">
+                            <Switch on={state.status}>
+                                <Case when="success">
+                                    <div className="gh-status success"><Checkmark /></div>
+                                </Case>
+                            </Switch>
+                            <div className="gh-logo"><GhostStripe /></div>
+                        </div>
+
+                        <Switch on={state.status}>
+                            <Case when="loading">
+                                <LoadingState />
+                            </Case>
+                            <Case when="error">
+                                <ErrorState errorMessage={state.data} />
+                            </Case>
+                            <Case when="success">
+                                <SuccessState token={state.data} />
+                            </Case>
+                        </Switch>
+
+                    </section>
+
+                    <div className="gh-footer">
                         <StripeLogo />
                         <button className="gh-button gh-button-white">Get support</button>
                     </div>
+
                 </div>
             </main>
         </div>
