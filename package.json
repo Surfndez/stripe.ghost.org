@@ -19,7 +19,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "lint": "eslint . --ext .js --cache",
-    "test": "react-scripts test",
+    "test": "react-scripts test --env=jest-environment-jsdom-sixteen",
     "posttest": "yarn lint",
     "eject": "react-scripts eject"
   },
@@ -39,6 +39,7 @@
     "@types/jest": "^25.2.3",
     "@types/react-copy-to-clipboard": "^4.3.0",
     "eslint-plugin-ghost": "1.5.0",
+    "jest-environment-jsdom-sixteen": "1.0.3",
     "typescript": "^3.9.5"
   }
 }
