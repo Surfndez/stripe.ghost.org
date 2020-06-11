@@ -6,11 +6,11 @@ import React from 'react';
  */
 function ErrorState(props) {
     return (
-        <div>
-            <p> There was an error </p>
-            <p>
-                <code> {props.errorMessage} </code>
-            </p>
+        <div className="gh-box">
+            <h2>Something went wrong</h2>
+            <p>Couldn't connect Ghost with Stripe. Please try again.</p>
+            <p>Error message:</p>
+            <code>{props.errorMessage}</code>
         </div>
     );
 }

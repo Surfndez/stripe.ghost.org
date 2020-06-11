@@ -13,7 +13,7 @@ function SuccessState(props) {
         <div className="gh-box">
             <h2>Secure key successfully generated!</h2>
             <p>Paste this key into Ghost Admin to complete the connection to Stripe. This is a secret key, so you should never give it to anyone else!</p>
-            <code>{props.token}</code>
+            <code style={{userSelect: 'none'}}>{props.token}</code>
             <CopyToClipboard text={props.token} onCopy={() => setCopied(true)}>
                 <button className="gh-button gh-button-primary">
                     {copied ? 'Copied' : 'Copy secure key'}

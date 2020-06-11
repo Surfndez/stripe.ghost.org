@@ -2,7 +2,9 @@ import React from 'react';
 
 function LoadingState() {
     return (
-        <p> Loading... </p>
+        <div className="gh-loading-content" data-testid="loading">
+            <div className="gh-loading-spinner"></div>
+        </div>
     );
 }
 
