@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Ghost",
+  "name": "Ghost Stripe OAuth bridge",
   "icons": [
     {
       "src": "favicon.ico",
@@ -8,9 +8,9 @@
       "type": "image/x-icon"
     },
     {
-      "src": "logo192.png",
+      "src": "logo100.png",
       "type": "image/png",
-      "sizes": "192x192"
+      "sizes": "100x100"
     },
     {
       "src": "logo512.png",
@@ -18,8 +18,8 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "start_url": "/",
+  "display": "minimal-ui",
+  "theme_color": "#343f44",
+  "background_color": "#343f44"
 }
