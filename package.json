@@ -24,8 +24,16 @@
     "posttest": "yarn lint",
     "eject": "react-scripts eject"
   },
+  "eslintConfig": {
+    "extends": [
+      "plugin:ghost/node"
+    ],
+    "plugins": [
+      "ghost"
+    ]
+  },
   "eslintIgnore": [
-    "build/service-worker.js"
+    "build/*"
   ],
   "browserslist": {
     "production": [
