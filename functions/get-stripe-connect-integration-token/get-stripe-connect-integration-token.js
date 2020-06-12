@@ -12,6 +12,7 @@
  * @typedef {Object} Response
  * @prop {number} statusCode
  * @prop {string} body
+ * @prop {Object=} originalError
  * @prop {Object.<string, string> =} headers
  * @prop {boolean =} isBase64Encoded
  */
@@ -28,12 +29,13 @@ async function handler(event) {
             body: 'Method Not Allowed'
         };
     }
-    console.log('Handler received params: ', event.queryStringParameters); // eslint-disable-line
+
     if (event.queryStringParameters.error) {
         console.log('Available Error values:', event.queryStringParameters.error);  // eslint-disable-line
         const description = event.queryStringParameters.error_description || 'An unknown error occured';
         return {
             statusCode: 500,
+            originalError: event.queryStringParameters.error,
             body: description
         };
     }
@@ -93,6 +95,7 @@ async function handler(event) {
         console.log('Full error', err); // eslint-disable-line
         return {
             statusCode: 500,
+            originalError: err,
             body: err.message
         };
     }
