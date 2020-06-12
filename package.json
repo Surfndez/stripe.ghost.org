@@ -24,6 +24,9 @@
     "posttest": "yarn lint",
     "eject": "react-scripts eject"
   },
+  "eslintIgnore": [
+    "build/service-worker.js"
+  ],
   "browserslist": {
     "production": [
       ">0.2%",
