@@ -6,7 +6,7 @@ import SuccessState from './components/SuccessState';
 import ErrorState from './components/ErrorState';
 import LoadingState from './components/LoadingState';
 import {ReactComponent as StripeLogo} from './assets/stripe_verified.svg';
-import {ReactComponent as Checkmark} from './assets/check.svg';
+import {ReactComponent as Checkmark} from './assets/checkmark.svg';
 import {ReactComponent as GhostStripe} from './assets/ghost_stripe.svg';
 
 /**

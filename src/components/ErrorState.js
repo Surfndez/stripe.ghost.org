@@ -1,4 +1,5 @@
 import React from 'react';
+import {ReactComponent as Warning} from '../assets/warning.svg';
 
 /**
  * @param {object} props
@@ -6,11 +7,12 @@ import React from 'react';
  */
 function ErrorState(props) {
     return (
-        <div className="gh-box">
-            <h2>Something went wrong</h2>
-            <p>Couldn't connect Ghost with Stripe. Please try again.</p>
-            <p>Error message:</p>
-            <code>{props.errorMessage}</code>
+        <div className="gh-box gh-error-box">
+            <Warning />
+            <div className="gh-error-content">
+                <h2>Could not connect to Stripe</h2>
+                <p>An error occurred while connecting to Stripe. Please try again by clicking on “Connect with Stripe” in Ghost.</p>
+            </div>
         </div>
     );
 }
