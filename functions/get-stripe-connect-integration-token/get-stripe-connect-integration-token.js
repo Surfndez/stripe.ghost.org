@@ -12,7 +12,6 @@
  * @typedef {Object} Response
  * @prop {number} statusCode
  * @prop {string} body
- * @prop {Object=} originalError
  * @prop {Object.<string, string> =} headers
  * @prop {boolean =} isBase64Encoded
  */
@@ -31,11 +30,11 @@ async function handler(event) {
     }
 
     if (event.queryStringParameters.error) {
-        console.log('Available Error values:', event.queryStringParameters.error);  // eslint-disable-line
+        console.log('Available values:', event.queryStringParameters);  // eslint-disable-line
         const description = event.queryStringParameters.error_description || 'An unknown error occured';
+        console.log('error_description', description); // eslint-disable-line
         return {
             statusCode: 500,
-            originalError: event.queryStringParameters.error,
             body: description
         };
     }
@@ -65,7 +64,6 @@ async function handler(event) {
             grant_type: 'authorization_code',
             code: event.queryStringParameters.code
         });
-        console.log('Received token response: ', tokenResponse);  // eslint-disable-line
 
         if (tokenResponse.livemode === undefined) {
             throw new Error('No livemode received');
@@ -92,10 +90,9 @@ async function handler(event) {
             body: token
         };
     } catch (err) {
-        console.log('Full error', err); // eslint-disable-line
+        console.log('Stripe Error:\n', err); // eslint-disable-line
         return {
             statusCode: 500,
-            originalError: err,
             body: err.message
         };
     }
