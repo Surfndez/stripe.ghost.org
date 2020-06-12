@@ -28,8 +28,9 @@ async function handler(event) {
             body: 'Method Not Allowed'
         };
     }
-
+    console.log('Handler received params: ', event.queryStringParameters); // eslint-disable-line
     if (event.queryStringParameters.error) {
+        console.log('Available Error values:', event.queryStringParameters.error);  // eslint-disable-line
         const description = event.queryStringParameters.error_description || 'An unknown error occured';
         return {
             statusCode: 500,
@@ -62,6 +63,7 @@ async function handler(event) {
             grant_type: 'authorization_code',
             code: event.queryStringParameters.code
         });
+        console.log('Received token response: ', tokenResponse);  // eslint-disable-line
 
         if (tokenResponse.livemode === undefined) {
             throw new Error('No livemode received');
@@ -88,6 +90,7 @@ async function handler(event) {
             body: token
         };
     } catch (err) {
+        console.log('Full error', err); // eslint-disable-line
         return {
             statusCode: 500,
             body: err.message
