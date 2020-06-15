@@ -8,17 +8,11 @@ import {ReactComponent as Warning} from '../assets/warning.svg';
  */
 function ErrorState(props) {
     const {errorMessage} = props;
-    const [state, setState] = useState({title: 'Default error title', message: 'An error occurred while connecting to Stripe. Please try again by clicking on “Connect with Stripe” in Ghost.'});
+    const [state, setState] = useState({title: 'Connection error', message: 'An error occurred while connecting to Stripe. Please try again by clicking on “Connect with Stripe” in Ghost Admin to start over.'});
 
     useEffect(() => {
-        if (errorMessage.match(/authorization code has already been used/igm)) {
-            setState({title: 'Code has been used already', message: 'An error occurred while connecting to Stripe. Please try again by clicking on “Connect with Stripe” in Ghost.'});
-        } else if (errorMessage.match(/authorization code does not exist/igm)) {
-            setState({title: 'Code does not exist', message: 'An error occurred while connecting to Stripe. Please try again by clicking on “Connect with Stripe” in Ghost.'});
-        } else if (errorMessage.match(/connection to Stripe/igm)) {
-            setState({title: 'Could not connect to Stripe', message: 'An error occurred while connecting to Stripe. Please try again by clicking on “Connect with Stripe” in Ghost.'});
-        } else if (errorMessage.match(/user denied your request/igm)) {
-            setState({title: 'You pressed cancel', message: 'An error occurred while connecting to Stripe. Please try again by clicking on “Connect with Stripe” in Ghost.'});
+        if (errorMessage.match(/user denied your request/igm)) {
+            setState({title: 'Connection cancelled', message: 'You cancelled the connection process to Stripe. If you would like to try again, you can return to Ghost Admin and click on “Connect with Stripe” to start over.'});
         }
     }, [errorMessage]);
 
