@@ -98,12 +98,12 @@
     padding: 10px;
     background: #F8FAFC;
     border: 1px solid #E5EFF5;
-    border-radius: 5px;
+    border-radius: var(--radius) var(--radius) 0 0;
     font-size: 1.3rem;
     line-height: 1.5em;
     letter-spacing: 0.025em;
     color: #9BAEB8;
-    margin: 20px 0;
+    margin: 20px 0 0;
 }
 
 .gh-error-box {
