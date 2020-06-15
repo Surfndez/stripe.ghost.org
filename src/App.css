@@ -79,15 +79,15 @@
     font-size: 1.9rem;
     line-height: 1.2em;
     letter-spacing: 0.015em;
-    margin: 0 0 15px;
+    margin: 0 0 10px;
 }
 
 .gh-box p {
+    margin: 0;
     font-size: 1.4rem;
     line-height: 1.5em;
     letter-spacing: 0.025em;
-    color: #738A94;
-    margin: .3em 0 15px;
+    color: var(--color-base);
 }
 
 .gh-box code {
@@ -103,7 +103,7 @@
     line-height: 1.5em;
     letter-spacing: 0.025em;
     color: #9BAEB8;
-    margin-bottom: 20px;
+    margin: 20px 0;
 }
 
 .gh-error-box {
