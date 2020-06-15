@@ -56,9 +56,7 @@ function App(props) {
 
                     <div className="gh-footer">
                         <StripeLogo />
-                        <a href="https://ghost.org/faq/" className="gh-button gh-button-white" role="button">
-                            Get support
-                        </a>
+                        <a className="gh-button gh-button-white" href="https://ghost.org/integrations/stripe/">Get support</a>
                     </div>
 
                 </div>
