@@ -16,7 +16,7 @@ function SuccessState(props) {
             <code style={{userSelect: 'none'}}>{props.token}</code>
             <CopyToClipboard text={props.token} onCopy={() => setCopied(true)}>
                 <button className="gh-button gh-button-primary">
-                    {copied ? 'Copied' : 'Copy secure key'}
+                    {copied ? 'Copied to clipboard!' : 'Copy secure key'}
                 </button>
             </CopyToClipboard>
         </div>
