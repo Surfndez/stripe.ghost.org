@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './styles/screen.css';
 import {useState, useEffect} from 'react';
 import Switch, {Case} from './components/Switch';
 import SuccessState from './components/SuccessState';
