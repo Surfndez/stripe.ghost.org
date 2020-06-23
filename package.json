@@ -13,7 +13,7 @@
     "react-copy-to-clipboard": "^5.0.2",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",
-    "stripe": "8.64.0"
+    "stripe": "8.65.0"
   },
   "scripts": {
     "dev": "netlify dev",
