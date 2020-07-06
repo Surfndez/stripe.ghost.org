@@ -9,9 +9,9 @@
     "@testing-library/react": "10.4.4",
     "@testing-library/user-event": "11.4.2",
     "@types/react-dom": "16.9.8",
-    "react": "^16.13.1",
-    "react-copy-to-clipboard": "^5.0.2",
-    "react-dom": "^16.13.1",
+    "react": "16.13.1",
+    "react-copy-to-clipboard": "5.0.2",
+    "react-dom": "16.13.1",
     "react-scripts": "3.4.1",
     "stripe": "8.69.0"
   },
@@ -49,9 +49,9 @@
   },
   "devDependencies": {
     "@types/jest": "26.0.4",
-    "@types/react-copy-to-clipboard": "^4.3.0",
+    "@types/react-copy-to-clipboard": "4.3.0",
     "eslint-plugin-ghost": "1.5.0",
     "jest-environment-jsdom-sixteen": "1.0.3",
-    "typescript": "^3.9.5"
+    "typescript": "3.9.5"
   }
 }
